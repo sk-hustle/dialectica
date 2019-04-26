@@ -75,8 +75,8 @@ $categorie_id = $_POST['categorie_id'];
 
     <!-- NEUE CATEGORIES ANLEGEN-->
     <div class="row">
-        <div class="col-sm-offset-3 col-sm-6">
-            <h3>Categories</h3>
+        <div class="col-sm-offset-4 col-sm-3 text-center">
+            <h1>Categories</h1>
             <!--Formular um neue Kategorien hinzuzufügen-->
             <form id="send" method="POST" action="index.php">
             <input id="categorie" type="text" name="categorie" placeholder="add new categorie" required/>
@@ -115,18 +115,11 @@ $categorie_id = $_POST['categorie_id'];
     <!-- INFO -->
     <div class="row">
         <div class="col-sm-offset-3 col-sm-6">
-            
-            <button class="btn btn-info" data-toggle="collapse" data-target="#mindsetinfo">Mindset Info</button>
-            <div id="mindsetinfo" class="collapse">
-                
-            <?php include 'mindsetinfo.php' // Infos zu Mindset;?>
-            
-            </div>
-            <p>Advantage, Disadvantage, Argument, Counter-argument, Thesis, Antithesis, Hypothesis & Fact </p>
-            <p>Quellen: <a href="https://de.wiktionary.org/wiki/" target="_blank">Wiktionary</a></p>
+             <?php include 'mindsetinfo.php' // Infos zu Mindset;?>
         </div>
     </div>
     <!-- INFO -->
+    
 </div>
 
 

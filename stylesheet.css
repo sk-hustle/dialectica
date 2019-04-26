@@ -3,3 +3,5 @@ table {
 }
 
 html{ background-color: lightgrey;}
+
+a .tooltip:hover{ color: #fcf;}

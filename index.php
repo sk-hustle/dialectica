@@ -13,25 +13,33 @@ $categorie_id = $_POST['categorie_id'];
 
 <div class="container col-sm-12">
     
+    <!-- NEUE QUESTION ANLEGEN-->
     <div class="row">
         <div class="col-sm-offset-4 col-sm-3 text-center">
             <h1>Questions</h1>
-            <!--Formular um neue Fragen hinzuzufügen-->
             <form id="send" method="POST" action="index.php">
-                <input id="question" type="text" name="question" placeholder="add new question" required/>
-                <select class="form-control" id="categorie_id" name="categorie_id">
+            <input id="question" type="text" name="question" placeholder="add new question" required/>
+            <select id="categorie_id" name="categorie_id">
                 <?php
-                    $object->getCategories();
+                    $object->getCategories(); 
                 ?>
-                </select>
-                <button type="submit" class="btn btn-primary">Create New Question</button>
+            </select>
+            <button type="submit" class="btn btn-primary">Create New Question</button>
             </form>
             
             <?php
-                $object->getIwas();
+            if (isset($question) && isset($categorie_id)){
+                
+                $object->setQuestion($question, $categorie_id);
+            }
             ?>
+            
         </div>
     </div>
+    <!-- NEUE QUESTION ANLEGEN-->
+    
+    
+    <!-- QUESTIONS TABELLE ANZEIGEN-->
     <div class="row">
         <div class="col-sm-offset-3 col-sm-6">
             <!-- Tabelle um Datensätze anzuzeigen-->
@@ -56,7 +64,6 @@ $categorie_id = $_POST['categorie_id'];
                     if(isset($delete) && !empty($delete)){
                         $object->deleteQuestion($delete);
                     }
-                        
                 ?>
                 
             </tbody>
@@ -64,7 +71,9 @@ $categorie_id = $_POST['categorie_id'];
             
         </div>
     </div>
+    <!-- QUESTIONS TABELLE ANZEIGEN-->
 
+    <!-- NEUE CATEGORIES ANLEGEN-->
     <div class="row">
         <div class="col-sm-offset-3 col-sm-6">
             <h3>Categories</h3>
@@ -82,10 +91,12 @@ $categorie_id = $_POST['categorie_id'];
             ?>
         </div>
     </div>
+    <!-- NEUE CATEGORIES ANLEGEN-->
     
+    
+    <!-- CATEGORIES TABELLE -->
     <div class="row">
         <div class="col-sm-offset-3 col-sm-6">
-            <!-- Categorie Tabelle Datensätze anzuzeigen-->
             <table class="table table-bordered table-striped" style="width:800px">
             <thead>
                 <tr>
@@ -99,7 +110,9 @@ $categorie_id = $_POST['categorie_id'];
             </table>
         </div>
     </div>
+    <!-- CATEGORIES TABELLE -->
     
+    <!-- INFO -->
     <div class="row">
         <div class="col-sm-offset-3 col-sm-6">
             
@@ -113,6 +126,7 @@ $categorie_id = $_POST['categorie_id'];
             <p>Quellen: <a href="https://de.wiktionary.org/wiki/" target="_blank">Wiktionary</a></p>
         </div>
     </div>
+    <!-- INFO -->
 </div>
 
 

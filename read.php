@@ -18,7 +18,7 @@ $antithesis = "Antithesis";
     <!--NAVIGATION-->
     <div class="row">
         <div class="col-sm-offset-3 col-sm-6">
-            <h1>Read Question</h1>
+            <h1>Read Question <?php echo $id;?></h1>
             <button type="button" class="btn btn-success" onclick="location.href='/proj/proj7/create.php?id=<?php echo $id;?>';">Create New Answer</button>
             <button type="button" class="btn btn-primary" onclick="location.href='/proj/proj7';">Create New Question</button>
             <button type="button" class="btn btn-danger" onclick="location.href='/proj/proj7';">Go Back</button>

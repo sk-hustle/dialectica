@@ -19,11 +19,8 @@ $mindset = $_REQUEST['mindset'];
 
 <div class="container col-sm-12">
     <div class="row">
-        <div class="col-sm-offset-3 col-sm-6">
-            <h1>Create Question</h1>
-            <button type="button" onclick="location.href='/proj/proj7/read.php?id=<?php echo $id;?>';" 
-                    class="btn btn-danger">Go Back to Question <?php echo $id;?></button>
-            <h1><?php $object->getQuestion($id); ?></h1>   
+        <div class="col-sm-offset-3 col-sm-4">
+            <h1>Create Answer to <br><?php $object->getQuestion($id);?> </h1>
             
             <!--Frage neue Antworten hinzuzufügen-->
             <form id="send" method="POST" action="/proj/proj7/create.php?id=<?php echo $id;?>">
@@ -41,6 +38,8 @@ $mindset = $_REQUEST['mindset'];
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary">Create New Answer</button>
+                    <button type="button" onclick="location.href='/proj/proj7/read.php?id=<?php echo $id;?>';" 
+                        class="btn btn-danger">Go Back to Question <?php echo $id;?></button>
                 </div>
             </form>
             

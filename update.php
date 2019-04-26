@@ -17,8 +17,8 @@ $antithesis = "Antithesis";
 <div class="container col-sm-12">
 
     <div class="row">
-        <div class="col-sm-offset-3 col-sm-3">
-            <h1>Update Question</h1>
+        <div class="col-sm-offset-3 col-sm-4">
+            <h1>Update Question <?php echo $id;?></h1>
             <form id="send" method="POST" action="update.php?id=<?php echo $id;?>">
                 <div class="form-group">
                     <input class="form-control" type='text' name='question' placeholder='<?php $object->getQuestion($id); ?>'/>

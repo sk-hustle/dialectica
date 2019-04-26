@@ -18,12 +18,17 @@ $categorie_id = $_POST['categorie_id'];
         <div class="col-sm-offset-4 col-sm-3 text-center">
             <h1>Questions</h1>
             <form id="send" method="POST" action="index.php">
-            <input id="question" type="text" name="question" placeholder="add new question" required/>
-            <select id="categorie_id" name="categorie_id">
-                <?php
-                    $object->getCategories(); 
-                ?>
-            </select>
+                
+            <div class="form-group">    
+                <input class="form-control" id="question" type="text" name="question" placeholder="add new question" required/>
+            </div>
+
+            <div class="form-group">  
+                <select class="form-control" id="categorie_id" name="categorie_id">
+                    <?php $object->getCategories(); ?>
+                </select>
+            </div>   
+                
             <button type="submit" class="btn btn-primary">Create New Question</button>
             </form>
             
@@ -79,8 +84,13 @@ $categorie_id = $_POST['categorie_id'];
             <h1>Categories</h1>
             <!--Formular um neue Kategorien hinzuzufügen-->
             <form id="send" method="POST" action="index.php">
-            <input id="categorie" type="text" name="categorie" placeholder="add new categorie" required/>
-            <button type="submit" class="btn btn-primary">Create New Categorie</button>
+                
+                <div class="form-group">
+                    <input class="form-control" id="categorie" type="text" name="categorie" placeholder="add new categorie" required/>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Create New Categorie</button>
+                
             </form>
             
             <?php

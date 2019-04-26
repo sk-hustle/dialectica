@@ -1,12 +1,9 @@
 <?php
 require_once("header.php");
+include 'includes/model.inc.php';
 
-// get id 
+$object = new Model;
 $id = $_GET['id'];
-
-include 'includes/mindset.inc.php';
-
-$object = new Mindset;
 $advantage = "Advantage";
 $disadvantage = "Disadvantage";
 $argument = "Argument";
@@ -21,6 +18,7 @@ $antithesis = "Antithesis";
     <!--NAVIGATION-->
     <div class="row">
         <div class="col-sm-offset-3 col-sm-6">
+            <h1>Read Question</h1>
             <button type="button" class="btn btn-success" onclick="location.href='/proj/proj7/create.php?id=<?php echo $id;?>';">Create New Answer</button>
             <button type="button" class="btn btn-primary" onclick="location.href='/proj/proj7';">Create New Question</button>
             <button type="button" class="btn btn-danger" onclick="location.href='/proj/proj7';">Go Back</button>
@@ -191,10 +189,9 @@ $antithesis = "Antithesis";
     </div>
     <!--  -->
     
-    
+    <!--INNER JOIN Alle Antworten zu der Frage-->
     <div class="row">
         <div class="col-sm-offset-3 col-sm-6">
-            <!--INNER JOIN Alle Antworten zu der Frage-->
             <h3>All Answers to <?php echo $id;?></h3> 
             <table class="table table-bordered table-striped" >
                 <thead>
@@ -206,13 +203,13 @@ $antithesis = "Antithesis";
                 </thead>
                 <tbody>
                     
-                <?php $object->getAllAnswers($id); ?>
+                <?php $object->getAnswers($id); ?>
                 
                 </tbody>
             </table>
         </div>
     </div>
-    <!--  -->
+    <!--INNER JOIN Alle Antworten zu der Frage-->
     
     
     

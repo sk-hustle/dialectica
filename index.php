@@ -1,9 +1,8 @@
 <?php
 require_once("header.php");
-include 'includes/mindset.inc.php';
+include 'includes/model.inc.php';
 
-$object = new Mindset;
-
+$object = new Model;
 $categorie = $_POST['categorie'];
 $delete = $_GET['delete'];
 $question = $_POST['question'];
@@ -25,7 +24,7 @@ $categorie_id = $_POST['categorie_id'];
 
             <div class="form-group">  
                 <select class="form-control" id="categorie_id" name="categorie_id">
-                    <?php $object->getCategories(); ?>
+                    <?php $object->getOptionCategories(); ?>
                 </select>
             </div>   
                 
@@ -61,18 +60,15 @@ $categorie_id = $_POST['categorie_id'];
                 </tr>
             </thead>
             <tbody>
-                <?php
-                
-                    $object->getAllQuestions();
-                    
-                    // wenn delete=id gesetzt, dann löschen
-                    if(isset($delete) && !empty($delete)){
-                        $object->deleteQuestion($delete);
-                    }
-                ?>
-                
+                <?php $object->getQuestions(); ?>
             </tbody>
             </table>
+            <?php 
+            if(isset($delete) && !empty($delete)){
+                
+                $object->deleteQuestion($delete);
+            }
+            ?>
             
         </div>
     </div>
@@ -115,7 +111,7 @@ $categorie_id = $_POST['categorie_id'];
                 </tr>
             </thead>
             <tbody>
-                <?php $object->getAllCategories(); ?>
+                <?php $object->getCategories(); ?>
             </tbody>
             </table>
         </div>

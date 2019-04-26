@@ -1,6 +1,5 @@
 <?php require_once("header.php");
 
-// get id 
 $id = $_GET['id'];
 ?>
 

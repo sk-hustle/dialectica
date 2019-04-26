@@ -1,9 +1,3 @@
-<?php
-session_start(); //Nicht vergessen
-//require_once("connect.php");
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,25 +12,3 @@ session_start(); //Nicht vergessen
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-  
-<!-- Sessions Login Test-->
-<?php
-// $username = $_POST['username'];
- 
-// if(!isset($username) OR empty($username)) {
-//   $username = "Gast";
-// }
- 
-// //Session registieren
-// $_SESSION['username'] = $username;
- 
-// //Text ausgeben
-// echo "Hallo $username <br />
-// <a href='logout.php'>Logout</a>  <br />
-// <a href='index.php'>Home</a>  <br />
-// <a href='register.php'>Register</a> <br />
-// Follower & Owner
-// ";
-?>
-
-<!-- Sessions Test Ende-->

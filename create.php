@@ -33,13 +33,20 @@ $antithesis = "Antithesis";
         </div>
         <div>
             <select class="form-control" id="sel1" name="mindset" style="width:175px">
+                
                 <option value='<?php echo $mindset;?>' selected><?php echo $mindset;?></option>
-                <option>Advantage</option>
-                <option>Disadvantage</option>
-                <option>Argument</option>
-                <option>Counter-argument</option>
-                <option>Thesis</option>
-                <option>Antithesis</option>
+                
+                <?php
+                    $object->getMindsets($mindset);
+                ?>
+                
+                <!--<option>Advantage</option>-->
+                <!--<option>Disadvantage</option>-->
+                <!--<option>Argument</option>-->
+                <!--<option>Counter-argument</option>-->
+                <!--<option>Thesis</option>-->
+                <!--<option>Antithesis</option>-->
+                
             </select>
         </div>
         <div>
